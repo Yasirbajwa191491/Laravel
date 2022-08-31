@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\saveController;
 use App\Http\Controllers\connect;
+use App\Http\Controllers\tbControllerr;
+use App\Http\Controllers\apiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,12 +25,19 @@ Route::get("/users/{user}",[userController::class,'show']);
 Route::get('/user', function () {
     return view('user');
 });
-Route::view("save","/save");
-
+Route::get('/save/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('save');
+});
+// Route::view("save","/save");
 Route::get("/contact",[saveController::class,"save"]);
 Route::get("/connection",[connect::class,"dbConn"]);
 Route::post("/data",[saveController::class,"postHandler"]);
+Route::get("/getdata",[tbControllerr::class,"getData"]);
+Route::get("/get",[apiController::class,"get"]);
+Route::post("send",[apiController::class,"post"]);
+Route::delete("del",[apiController::class,"delete"]);
 Route::group(["middleware"=>["protected"]],function(){
-    
 Route::get("/contact",[saveController::class,"save"]);
 });
+Route::view("form","data");
