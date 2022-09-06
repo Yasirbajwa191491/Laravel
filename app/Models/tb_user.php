@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class tb_user extends Model
 {
     use HasFactory;
-    public $table="users";
+    // public $table="users";
 }
