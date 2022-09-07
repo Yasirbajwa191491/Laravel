@@ -40,6 +40,7 @@ Route::delete("deletemethod/{id}",[postController::class,"deleteHandler"]);
 Route::get("getonemethod/{id}",[postController::class,"getoneHandler"]);
 Route::post("updatemethod",[postController::class,"updateHandler"]);
 Route::get("/connection/{id?}",[connect::class,"dbConn"]);
+
 Route::get("/search/{id?}",[search::class,"dbConn"]);
 Route::post("/data",[saveController::class,"postHandler"]);
 Route::get("/getdata",[tbControllerr::class,"getData"]);
