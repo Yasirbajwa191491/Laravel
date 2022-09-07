@@ -7,6 +7,7 @@
           placeholder="Email"
            name="email"
            v-model="email"
+           autocomplete="off"
         />
    
     <input
@@ -19,6 +20,7 @@
           placeholder="Password"
            name="password"
            v-model="password"
+           autocomplete="off"
         />
         <button @click="postHandler">Post</button>
         <button @click="updateMethod">Update</button>
@@ -47,6 +49,7 @@
 <script>
     import axios from 'axios';
     export default {
+   
         data(){
             return{
               email:"",
@@ -124,7 +127,7 @@
     },
     mounted(){
       axios.get("getmethod").then((data)=>{
-        console.log(data.data);
+        console.log(data);
         this.users=data.data;
       })
     }

@@ -12,7 +12,10 @@ class User extends Model
     // function getEmailAttribute($value){
     //     return ucfirst($value);
     // }
-    public function setEmailAttribute($value){
-        return $this->attributes["email"]="email".$value;
-    }
+    // public function setEmailAttribute($value){
+    //     return $this->attributes["email"]="email".$value;
+    // // }
+    // function getRelation(){
+    //   return  $this->hasMany('App\Models\Tb_user');
+    // }
 }

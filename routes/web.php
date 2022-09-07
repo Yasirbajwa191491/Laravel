@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\saveController;
 use App\Http\Controllers\connect;
 use App\Http\Controllers\tbControllerr;
 use App\Http\Controllers\apiController;
+use App\Http\Controllers\search;
 use App\Http\Controllers\FetchData;
 use App\Http\Controllers\postController;
 /*
@@ -18,7 +20,6 @@ use App\Http\Controllers\postController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/abc', function () {
     return view('welcome');
 });
@@ -38,7 +39,8 @@ Route::get("getmethod",[postController::class,"getHandler"]);
 Route::delete("deletemethod/{id}",[postController::class,"deleteHandler"]);
 Route::get("getonemethod/{id}",[postController::class,"getoneHandler"]);
 Route::post("updatemethod",[postController::class,"updateHandler"]);
-Route::get("/connection",[connect::class,"dbConn"]);
+Route::get("/connection/{id?}",[connect::class,"dbConn"]);
+Route::get("/search/{id?}",[search::class,"dbConn"]);
 Route::post("/data",[saveController::class,"postHandler"]);
 Route::get("/getdata",[tbControllerr::class,"getData"]);
 Route::post("/postdata",[tbControllerr::class,"postData"]);

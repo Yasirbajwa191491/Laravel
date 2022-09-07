@@ -5626,6 +5626,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5794,7 +5796,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this4 = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("getmethod").then(function (data) {
-      console.log(data.data);
+      console.log(data);
       _this4.users = data.data;
     });
   }
@@ -29309,6 +29311,7 @@ var render = function () {
         minLength: "{3}",
         placeholder: "Email",
         name: "email",
+        autocomplete: "off",
       },
       domProps: { value: _vm.email },
       on: {
@@ -29351,6 +29354,7 @@ var render = function () {
         minLength: "{6}",
         placeholder: "Password",
         name: "password",
+        autocomplete: "off",
       },
       domProps: { value: _vm.password },
       on: {
